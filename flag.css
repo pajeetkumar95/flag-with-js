@@ -45,3 +45,36 @@
     transform: rotate(360deg);
 }
 
+@media all and (max-width:520px){
+    .flag{
+        /* margin:0rem 1rem ; */
+    }
+}
+
+@media all and (max-width:450px){
+    .flag input,button{
+        width: 100px;
+    }
+}
+
+@media all and (max-width:400px){
+    #wrapper{
+        display: block;
+        height: 550px;
+        padding: 1rem 4rem;
+        /* padding: 2.5rem; */
+    }
+    .box{
+        margin-top: 1rem;
+        padding:0 1rem;
+    }
+}
+
+@media all and (max-width:350px){
+    .flag{
+        width: 200px;
+    }
+    .box{
+        width: 200px;
+    }
+}
