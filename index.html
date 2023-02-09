@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Flag All Countries</title>
+    <link rel="stylesheet" href="flag.css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div class="flag">
+            <input type="name" placeholder="Enter Your Country" required autofocus>
+            <button>Get Flag</button>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+        </div>
+    </div>
+
+
+    <script>
+        const input = document.querySelector('input')
+        const btn = document.querySelector('button:first-of-type')
+
+    let image = document.querySelector('img')
+        fetch('https://flagcdn.com/en/codes.json')
+            .then((response) => {
+                return response.json()
+            })
+            .then((result) => {
+                console.log(result)
+                flag(result)
+            })
+
+        function flag(data) {
+            btn.onclick = () => {
+                for (let i in data) {
+                    if (input.value === data[i]) {
+                        // console.log(data[i])
+                        image.src = "https://flagcdn.com/160x120/" + [i] + ".png"
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
